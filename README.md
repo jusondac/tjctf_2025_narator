@@ -1,5 +1,7 @@
 # TJCTF CTF Challenges Workspace
 
+![Screenshot From 2025-06-09 11-29-03](https://github.com/user-attachments/assets/1859b0b8-b80d-4724-a443-77388d1f9934)
+
 This repository contains a collection of CTF challenges from TJCTF, organized by category. Each challenge includes source files, solutions, and where applicable, solved flags.
 
 ## 📁 Directory Structure

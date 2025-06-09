@@ -1,0 +1,5 @@
+I HATE bugs in production.
+
+flag is in /app/flag.txt
+
+nc tjc.tf 31363

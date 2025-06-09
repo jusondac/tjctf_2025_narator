@@ -1,0 +1,194 @@
+1. "Warmup"
+    This one's pretty straightforward.
+
+Match on all of these:    But none of these:
+------------------------  ------------------------
+ampasimenite              jasmone
+anchorable                decisivenesses
+aconic                    backoff
+antistrophic              whitebark
+abrade                    physogastrism
+arroya                    shavee
+apoplex                   hanoverian
+ayahs                     weatherstripped
+arock                     naturalize
+anconoid                  lophotrichous
+anglophile                nonprecedential
+acalephan                 tjctf
+amaze                     shepherdia
+adelphe                   waymark
+anno                      picnicker
+amiable                   bottleholder
+aliquid                   porule
+achromatin                diagraming
+aircheck                  solifuge
+antigenically             phrenetically
+
+Maximum allowable length is 2
+
+> ^a
+
+
+2. "Tenet"
+    It's a classic chicken-and-egg question: 
+    Which came first, the Roman graffiti or the Christopher Nolan movie?
+
+Match on all of these:     But none of these:
+-------------------------  ---------------------------------------------
+satorarepotenetoperarotas  chirl
+decaleminacivicanimelaced  kayak
+strawtrelareferalertwarts  croisstrutannotdawes
+hakamanasakayakasanamakah  khnabadalanamanaladabanhk
+dimitinarimadamiranitimid  parssalertrevertrelassrap
+faradaromarotoramoradaraf  makahadelykerekyledahakam
+banakaholanoyonalohakanab  crimpgruftgowermairsjessi
+lassoartusstetssutraossal  nasabbnamasamasamanbbasan
+rakisanolikodokilonasikar  mfssaartusstatssutraassfm
+tadesaneledewedelenasedat  camusvmelumesemulemvsumac
+assetscamesalasemacstessa  tknakaronanoyonanorakankt
+cestiecartsamastraceitsec  sejabenemarexeramenebajes
+gnatsnonetananatenonstang  esshmshamasamasamahsmhsse
+rotasoperatevetareposator  talasaladalwvwladalasalat
+rakesamenekeyekenemasekar  talasadelslemelsledasalat
+salemanelelemelelenamelas  areposatortenetrotasopera
+assesspalesamaselapssessa  faradaledaaeveaadeladaraf
+dartsavertrevertrevastrad  assamshampsalaspmahsmassa
+coramoletareveratelomaroc  nesoaevilssirissliveaosen
+nertaecartradartraceatren  zaiananasamadamasananaiaz
+haramadelareferaledamarah  kayakkayakkayakkayakkayak
+latonanimotipitominanotal  kanltadalanamanaladatlnak
+kedarenemadewedameneradek  batheskaldifritfacksladesremop
+masseattisstatssittaessam  awhetmeresfatalabdulaboonamulagiamo
+kelsielapslavalspaleislek  ervumkemmemuzakalgiaapersdikesswinkrizzo
+waresalonerotorenolaseraw  avenspairtstrohaddiasixthaeriesclavtepeecribs
+susanulemasexesamelunasus
+
+Maximum allowable length is 50
+
+> .*(lo|ti|esa|ce|om|va|ef|ate|ste|eto|sak|ew|nel).*
+
+
+3. "Triumvirate"
+    Ah yes, quinary, my fifth favorite base.
+
+Match on all of these:               But none of these:
+-----------------------------------  ----------------------------------
+0                                    1
+3                                    4
+11                                   210
+14                                   11310
+22                                   214131244
+30                                   3213002030
+2402301                              303032014212
+2423144312                           231332302134
+111413130043                         110220031020430
+3402023233320                        1422343112104210
+130424322431012                      110310304112132043
+31243200410022310                    100210421022044210
+1420210414114303030                  1114412243313242103
+302100312023023123                   24440314200314423044
+2020212213114432333240               10431021421031033200
+1243332123330120041301               43114042320203440411
+1403212440313014044442               1122103140022040312224
+32301404334330404131321              20113122400131413033301
+413011141021024302200400             114042013123013231123102344
+4210332323242404120224132            102310311320124044204140131
+114401022024420003234234444          1000441233101220230414004112333
+13020411424304401310144130040302     10212311344141143012420443230301
+11202241201424204222113011221133     20121332123142340324001223212344
+234343341022001132401403022101104    42441333222430014043301433413001
+231421441204321403132040024202002    242310103234324100011331130230334
+10410400231012014340122214134013042  1441413341001141224132000024031214
+
+Maximum allowable length is 70
+
+> ^([03]|2[14]*2|([14]|2[14]*[03])(2|[03][14]*[03])*([14]|[03][14]*2))*$
+
+
+4. "Lucky Number"
+    I don't think you need any hints as to which base this is.
+
+Match on all of these:    But none of these:
+------------------------  ------------------------
+0                         1
+111                       10
+1110                      11
+10101                     100
+11100                     101
+100011                    110
+101010                    1000
+110001                    1001
+111000                    1010
+111111                    1011
+1000110                   1100
+1001101                   1101
+1010100                   1111
+1011011                   10000
+1100010                   10001
+1101001                   10010
+1110000                   10011
+1110111                   10100
+1111110                   10110
+10000101                  10111
+10001100                  101101
+10010011                  1100001
+10011010                  1101111
+10100001                  10111011
+10101000                  11110100
+10101111                  11110111
+10110110                  100110110
+10111101                  100001111
+11000100                  110001010
+11001011                  111110000
+11010010                  101101001
+11011001                  110111110
+11100000                  1011100011
+11100111                  1010010111
+11101110                  1110000001
+11110101                  1011011011
+11111100                  1001101110
+100000011                 1011110110
+100001010                 1001100110
+100010001                 1010001111
+
+Maximum allowable length is 162
+
+> ^(0|(((0|111)|10(0(1|00))*0011)|(110(1)*0|10(0(1|00))*(1|0010(1)*0))(((00(1)*0|1010(1)*0)|1(1|00)(0(1|00))*(1|0010(1)*0)))*((01|1011)|1(1|00)(0(1|00))*0011)))*$
+
+
+5. "Tally"
+    Alright, time for a real challenge. This one should actually be difficult!
+
+Match on all of these:    But none of these:
+------------------------  ------------------------
+arraigning                edified
+nonordered                unreverberating
+abadbacdcacbdbdc          underpass
+mesosome                  interinsert
+ananna                    pilfered
+unendued                  nippiness
+tromometer                gregarinian
+caucasus                  deicide
+intestines                nonaristocratic
+i                         rototiller
+deed                      ozonizing
+horseshoer                museums
+happenchance              backbreaker
+reappear                  interradiated
+deeded                    antistalling
+pullup                    naturalize
+arraigning                equitriangular
+testes                    reparticipate
+mononymy                  ppd
+scintillescent            miasmas
+couscous                  cabbage
+
+Maximum allowable length is 62
+
+> ^(.)(\1|(.)(?=.*$(?<=^((?!\1|\3).|\1(?4)*?\3|\3(?4)*?\1)*)))*$
+
+
+If you liked these challenges (and who wouldn't?), check out regex.alf.nu.
+Several of these were inspired by ones on there.
+
+tjctf{davidebyzero_is_my_hero_6a452cbdc75f}

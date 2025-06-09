@@ -1,0 +1,576 @@
+
+heroQuest:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000401000 <_init>:
+  401000:	48 83 ec 08          	sub    $0x8,%rsp
+  401004:	48 8b 05 ed 2f 00 00 	mov    0x2fed(%rip),%rax        # 403ff8 <__gmon_start__>
+  40100b:	48 85 c0             	test   %rax,%rax
+  40100e:	74 02                	je     401012 <_init+0x12>
+  401010:	ff d0                	call   *%rax
+  401012:	48 83 c4 08          	add    $0x8,%rsp
+  401016:	c3                   	ret
+
+Disassembly of section .plt:
+
+0000000000401020 <.plt>:
+  401020:	ff 35 e2 2f 00 00    	push   0x2fe2(%rip)        # 404008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  401026:	ff 25 e4 2f 00 00    	jmp    *0x2fe4(%rip)        # 404010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  40102c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000401030 <puts@plt>:
+  401030:	ff 25 e2 2f 00 00    	jmp    *0x2fe2(%rip)        # 404018 <puts@GLIBC_2.2.5>
+  401036:	68 00 00 00 00       	push   $0x0
+  40103b:	e9 e0 ff ff ff       	jmp    401020 <.plt>
+
+0000000000401040 <setbuf@plt>:
+  401040:	ff 25 da 2f 00 00    	jmp    *0x2fda(%rip)        # 404020 <setbuf@GLIBC_2.2.5>
+  401046:	68 01 00 00 00       	push   $0x1
+  40104b:	e9 d0 ff ff ff       	jmp    401020 <.plt>
+
+0000000000401050 <printf@plt>:
+  401050:	ff 25 d2 2f 00 00    	jmp    *0x2fd2(%rip)        # 404028 <printf@GLIBC_2.2.5>
+  401056:	68 02 00 00 00       	push   $0x2
+  40105b:	e9 c0 ff ff ff       	jmp    401020 <.plt>
+
+0000000000401060 <fgets@plt>:
+  401060:	ff 25 ca 2f 00 00    	jmp    *0x2fca(%rip)        # 404030 <fgets@GLIBC_2.2.5>
+  401066:	68 03 00 00 00       	push   $0x3
+  40106b:	e9 b0 ff ff ff       	jmp    401020 <.plt>
+
+0000000000401070 <strcmp@plt>:
+  401070:	ff 25 c2 2f 00 00    	jmp    *0x2fc2(%rip)        # 404038 <strcmp@GLIBC_2.2.5>
+  401076:	68 04 00 00 00       	push   $0x4
+  40107b:	e9 a0 ff ff ff       	jmp    401020 <.plt>
+
+0000000000401080 <gets@plt>:
+  401080:	ff 25 ba 2f 00 00    	jmp    *0x2fba(%rip)        # 404040 <gets@GLIBC_2.2.5>
+  401086:	68 05 00 00 00       	push   $0x5
+  40108b:	e9 90 ff ff ff       	jmp    401020 <.plt>
+
+0000000000401090 <fopen@plt>:
+  401090:	ff 25 b2 2f 00 00    	jmp    *0x2fb2(%rip)        # 404048 <fopen@GLIBC_2.2.5>
+  401096:	68 06 00 00 00       	push   $0x6
+  40109b:	e9 80 ff ff ff       	jmp    401020 <.plt>
+
+00000000004010a0 <__isoc99_scanf@plt>:
+  4010a0:	ff 25 aa 2f 00 00    	jmp    *0x2faa(%rip)        # 404050 <__isoc99_scanf@GLIBC_2.7>
+  4010a6:	68 07 00 00 00       	push   $0x7
+  4010ab:	e9 70 ff ff ff       	jmp    401020 <.plt>
+
+00000000004010b0 <exit@plt>:
+  4010b0:	ff 25 a2 2f 00 00    	jmp    *0x2fa2(%rip)        # 404058 <exit@GLIBC_2.2.5>
+  4010b6:	68 08 00 00 00       	push   $0x8
+  4010bb:	e9 60 ff ff ff       	jmp    401020 <.plt>
+
+Disassembly of section .text:
+
+00000000004010c0 <_start>:
+  4010c0:	31 ed                	xor    %ebp,%ebp
+  4010c2:	49 89 d1             	mov    %rdx,%r9
+  4010c5:	5e                   	pop    %rsi
+  4010c6:	48 89 e2             	mov    %rsp,%rdx
+  4010c9:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  4010cd:	50                   	push   %rax
+  4010ce:	54                   	push   %rsp
+  4010cf:	49 c7 c0 b0 17 40 00 	mov    $0x4017b0,%r8
+  4010d6:	48 c7 c1 50 17 40 00 	mov    $0x401750,%rcx
+  4010dd:	48 c7 c7 a2 11 40 00 	mov    $0x4011a2,%rdi
+  4010e4:	ff 15 06 2f 00 00    	call   *0x2f06(%rip)        # 403ff0 <__libc_start_main@GLIBC_2.2.5>
+  4010ea:	f4                   	hlt
+  4010eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000004010f0 <_dl_relocate_static_pie>:
+  4010f0:	c3                   	ret
+  4010f1:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  4010f8:	00 00 00 
+  4010fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000401100 <deregister_tm_clones>:
+  401100:	b8 70 40 40 00       	mov    $0x404070,%eax
+  401105:	48 3d 70 40 40 00    	cmp    $0x404070,%rax
+  40110b:	74 13                	je     401120 <deregister_tm_clones+0x20>
+  40110d:	b8 00 00 00 00       	mov    $0x0,%eax
+  401112:	48 85 c0             	test   %rax,%rax
+  401115:	74 09                	je     401120 <deregister_tm_clones+0x20>
+  401117:	bf 70 40 40 00       	mov    $0x404070,%edi
+  40111c:	ff e0                	jmp    *%rax
+  40111e:	66 90                	xchg   %ax,%ax
+  401120:	c3                   	ret
+  401121:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  401128:	00 00 00 00 
+  40112c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000401130 <register_tm_clones>:
+  401130:	be 70 40 40 00       	mov    $0x404070,%esi
+  401135:	48 81 ee 70 40 40 00 	sub    $0x404070,%rsi
+  40113c:	48 89 f0             	mov    %rsi,%rax
+  40113f:	48 c1 ee 3f          	shr    $0x3f,%rsi
+  401143:	48 c1 f8 03          	sar    $0x3,%rax
+  401147:	48 01 c6             	add    %rax,%rsi
+  40114a:	48 d1 fe             	sar    $1,%rsi
+  40114d:	74 11                	je     401160 <register_tm_clones+0x30>
+  40114f:	b8 00 00 00 00       	mov    $0x0,%eax
+  401154:	48 85 c0             	test   %rax,%rax
+  401157:	74 07                	je     401160 <register_tm_clones+0x30>
+  401159:	bf 70 40 40 00       	mov    $0x404070,%edi
+  40115e:	ff e0                	jmp    *%rax
+  401160:	c3                   	ret
+  401161:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  401168:	00 00 00 00 
+  40116c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000401170 <__do_global_dtors_aux>:
+  401170:	80 3d 21 2f 00 00 00 	cmpb   $0x0,0x2f21(%rip)        # 404098 <completed.0>
+  401177:	75 17                	jne    401190 <__do_global_dtors_aux+0x20>
+  401179:	55                   	push   %rbp
+  40117a:	48 89 e5             	mov    %rsp,%rbp
+  40117d:	e8 7e ff ff ff       	call   401100 <deregister_tm_clones>
+  401182:	c6 05 0f 2f 00 00 01 	movb   $0x1,0x2f0f(%rip)        # 404098 <completed.0>
+  401189:	5d                   	pop    %rbp
+  40118a:	c3                   	ret
+  40118b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  401190:	c3                   	ret
+  401191:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  401198:	00 00 00 00 
+  40119c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004011a0 <frame_dummy>:
+  4011a0:	eb 8e                	jmp    401130 <register_tm_clones>
+
+00000000004011a2 <main>:
+  4011a2:	55                   	push   %rbp
+  4011a3:	48 89 e5             	mov    %rsp,%rbp
+  4011a6:	48 8b 05 d3 2e 00 00 	mov    0x2ed3(%rip),%rax        # 404080 <stdout@GLIBC_2.2.5>
+  4011ad:	be 00 00 00 00       	mov    $0x0,%esi
+  4011b2:	48 89 c7             	mov    %rax,%rdi
+  4011b5:	e8 86 fe ff ff       	call   401040 <setbuf@plt>
+  4011ba:	48 8d 3d 47 0e 00 00 	lea    0xe47(%rip),%rdi        # 402008 <_IO_stdin_used+0x8>
+  4011c1:	e8 6a fe ff ff       	call   401030 <puts@plt>
+  4011c6:	48 8d 3d 63 0e 00 00 	lea    0xe63(%rip),%rdi        # 402030 <_IO_stdin_used+0x30>
+  4011cd:	e8 5e fe ff ff       	call   401030 <puts@plt>
+  4011d2:	b8 00 00 00 00       	mov    $0x0,%eax
+  4011d7:	e8 11 00 00 00       	call   4011ed <createSave>
+  4011dc:	b8 00 00 00 00       	mov    $0x0,%eax
+  4011e1:	e8 3a 00 00 00       	call   401220 <game>
+  4011e6:	b8 00 00 00 00       	mov    $0x0,%eax
+  4011eb:	5d                   	pop    %rbp
+  4011ec:	c3                   	ret
+
+00000000004011ed <createSave>:
+  4011ed:	55                   	push   %rbp
+  4011ee:	48 89 e5             	mov    %rsp,%rbp
+  4011f1:	48 8d 3d 60 0e 00 00 	lea    0xe60(%rip),%rdi        # 402058 <_IO_stdin_used+0x58>
+  4011f8:	b8 00 00 00 00       	mov    $0x0,%eax
+  4011fd:	e8 4e fe ff ff       	call   401050 <printf@plt>
+  401202:	48 8b 05 87 2e 00 00 	mov    0x2e87(%rip),%rax        # 404090 <stdin@GLIBC_2.2.5>
+  401209:	48 89 c2             	mov    %rax,%rdx
+  40120c:	be 40 00 00 00       	mov    $0x40,%esi
+  401211:	48 8d 3d 88 2e 00 00 	lea    0x2e88(%rip),%rdi        # 4040a0 <saveName>
+  401218:	e8 43 fe ff ff       	call   401060 <fgets@plt>
+  40121d:	90                   	nop
+  40121e:	5d                   	pop    %rbp
+  40121f:	c3                   	ret
+
+0000000000401220 <game>:
+  401220:	55                   	push   %rbp
+  401221:	48 89 e5             	mov    %rsp,%rbp
+  401224:	48 83 ec 10          	sub    $0x10,%rsp
+  401228:	48 8d 3d 59 0e 00 00 	lea    0xe59(%rip),%rdi        # 402088 <_IO_stdin_used+0x88>
+  40122f:	e8 fc fd ff ff       	call   401030 <puts@plt>
+  401234:	48 8d 3d ad 0e 00 00 	lea    0xead(%rip),%rdi        # 4020e8 <_IO_stdin_used+0xe8>
+  40123b:	b8 00 00 00 00       	mov    $0x0,%eax
+  401240:	e8 0b fe ff ff       	call   401050 <printf@plt>
+  401245:	48 8d 45 ff          	lea    -0x1(%rbp),%rax
+  401249:	48 89 c6             	mov    %rax,%rsi
+  40124c:	48 8d 3d c6 0e 00 00 	lea    0xec6(%rip),%rdi        # 402119 <_IO_stdin_used+0x119>
+  401253:	b8 00 00 00 00       	mov    $0x0,%eax
+  401258:	e8 43 fe ff ff       	call   4010a0 <__isoc99_scanf@plt>
+  40125d:	48 8d 3d bc 0e 00 00 	lea    0xebc(%rip),%rdi        # 402120 <_IO_stdin_used+0x120>
+  401264:	e8 c7 fd ff ff       	call   401030 <puts@plt>
+  401269:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+  40126d:	3c 6e                	cmp    $0x6e,%al
+  40126f:	75 0c                	jne    40127d <game+0x5d>
+  401271:	b8 00 00 00 00       	mov    $0x0,%eax
+  401276:	e8 fd 01 00 00       	call   401478 <northForest>
+  40127b:	eb 52                	jmp    4012cf <game+0xaf>
+  40127d:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+  401281:	3c 65                	cmp    $0x65,%al
+  401283:	75 0c                	jne    401291 <game+0x71>
+  401285:	b8 00 00 00 00       	mov    $0x0,%eax
+  40128a:	e8 92 01 00 00       	call   401421 <eastCastle>
+  40128f:	eb 3e                	jmp    4012cf <game+0xaf>
+  401291:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+  401295:	3c 73                	cmp    $0x73,%al
+  401297:	75 0c                	jne    4012a5 <game+0x85>
+  401299:	b8 00 00 00 00       	mov    $0x0,%eax
+  40129e:	e8 03 02 00 00       	call   4014a6 <southDesert>
+  4012a3:	eb 2a                	jmp    4012cf <game+0xaf>
+  4012a5:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+  4012a9:	3c 77                	cmp    $0x77,%al
+  4012ab:	75 0c                	jne    4012b9 <game+0x99>
+  4012ad:	b8 00 00 00 00       	mov    $0x0,%eax
+  4012b2:	e8 1b 00 00 00       	call   4012d2 <westVillage>
+  4012b7:	eb 16                	jmp    4012cf <game+0xaf>
+  4012b9:	48 8d 3d 98 0e 00 00 	lea    0xe98(%rip),%rdi        # 402158 <_IO_stdin_used+0x158>
+  4012c0:	e8 6b fd ff ff       	call   401030 <puts@plt>
+  4012c5:	b8 00 00 00 00       	mov    $0x0,%eax
+  4012ca:	e8 51 ff ff ff       	call   401220 <game>
+  4012cf:	90                   	nop
+  4012d0:	c9                   	leave
+  4012d1:	c3                   	ret
+
+00000000004012d2 <westVillage>:
+  4012d2:	55                   	push   %rbp
+  4012d3:	48 89 e5             	mov    %rsp,%rbp
+  4012d6:	48 83 ec 10          	sub    $0x10,%rsp
+  4012da:	48 8d 3d 97 0e 00 00 	lea    0xe97(%rip),%rdi        # 402178 <_IO_stdin_used+0x178>
+  4012e1:	e8 4a fd ff ff       	call   401030 <puts@plt>
+  4012e6:	48 8d 3d bb 0e 00 00 	lea    0xebb(%rip),%rdi        # 4021a8 <_IO_stdin_used+0x1a8>
+  4012ed:	b8 00 00 00 00       	mov    $0x0,%eax
+  4012f2:	e8 59 fd ff ff       	call   401050 <printf@plt>
+  4012f7:	48 8d 45 ff          	lea    -0x1(%rbp),%rax
+  4012fb:	48 89 c6             	mov    %rax,%rsi
+  4012fe:	48 8d 3d 14 0e 00 00 	lea    0xe14(%rip),%rdi        # 402119 <_IO_stdin_used+0x119>
+  401305:	b8 00 00 00 00       	mov    $0x0,%eax
+  40130a:	e8 91 fd ff ff       	call   4010a0 <__isoc99_scanf@plt>
+  40130f:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+  401313:	3c 61                	cmp    $0x61,%al
+  401315:	75 0f                	jne    401326 <westVillage+0x54>
+  401317:	b8 00 00 00 00       	mov    $0x0,%eax
+  40131c:	e8 a3 00 00 00       	call   4013c4 <talkToVillagers>
+  401321:	e9 9b 00 00 00       	jmp    4013c1 <westVillage+0xef>
+  401326:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+  40132a:	3c 66                	cmp    $0x66,%al
+  40132c:	75 1d                	jne    40134b <westVillage+0x79>
+  40132e:	ba 14 00 00 00       	mov    $0x14,%edx
+  401333:	be 32 00 00 00       	mov    $0x32,%esi
+  401338:	48 8d 3d c6 0e 00 00 	lea    0xec6(%rip),%rdi        # 402205 <_IO_stdin_used+0x205>
+  40133f:	b8 00 00 00 00       	mov    $0x0,%eax
+  401344:	e8 92 01 00 00       	call   4014db <fight>
+  401349:	eb 76                	jmp    4013c1 <westVillage+0xef>
+  40134b:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+  40134f:	3c 67                	cmp    $0x67,%al
+  401351:	75 0c                	jne    40135f <westVillage+0x8d>
+  401353:	b8 00 00 00 00       	mov    $0x0,%eax
+  401358:	e8 c3 fe ff ff       	call   401220 <game>
+  40135d:	eb 62                	jmp    4013c1 <westVillage+0xef>
+  40135f:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+  401363:	3c 72                	cmp    $0x72,%al
+  401365:	75 44                	jne    4013ab <westVillage+0xd9>
+  401367:	48 8d 45 fd          	lea    -0x3(%rbp),%rax
+  40136b:	48 89 c7             	mov    %rax,%rdi
+  40136e:	b8 00 00 00 00       	mov    $0x0,%eax
+  401373:	e8 08 fd ff ff       	call   401080 <gets@plt>
+  401378:	48 8d 3d 91 0e 00 00 	lea    0xe91(%rip),%rdi        # 402210 <_IO_stdin_used+0x210>
+  40137f:	b8 00 00 00 00       	mov    $0x0,%eax
+  401384:	e8 c7 fc ff ff       	call   401050 <printf@plt>
+  401389:	b8 00 00 00 00       	mov    $0x0,%eax
+  40138e:	e8 72 00 00 00       	call   401405 <save>
+  401393:	48 8d 3d b6 0e 00 00 	lea    0xeb6(%rip),%rdi        # 402250 <_IO_stdin_used+0x250>
+  40139a:	e8 91 fc ff ff       	call   401030 <puts@plt>
+  40139f:	b8 00 00 00 00       	mov    $0x0,%eax
+  4013a4:	e8 29 ff ff ff       	call   4012d2 <westVillage>
+  4013a9:	eb 16                	jmp    4013c1 <westVillage+0xef>
+  4013ab:	48 8d 3d 0f 0f 00 00 	lea    0xf0f(%rip),%rdi        # 4022c1 <_IO_stdin_used+0x2c1>
+  4013b2:	e8 79 fc ff ff       	call   401030 <puts@plt>
+  4013b7:	b8 00 00 00 00       	mov    $0x0,%eax
+  4013bc:	e8 5f fe ff ff       	call   401220 <game>
+  4013c1:	90                   	nop
+  4013c2:	c9                   	leave
+  4013c3:	c3                   	ret
+
+00000000004013c4 <talkToVillagers>:
+  4013c4:	55                   	push   %rbp
+  4013c5:	48 89 e5             	mov    %rsp,%rbp
+  4013c8:	48 8d 3d 11 0f 00 00 	lea    0xf11(%rip),%rdi        # 4022e0 <_IO_stdin_used+0x2e0>
+  4013cf:	e8 5c fc ff ff       	call   401030 <puts@plt>
+  4013d4:	48 8d 3d 2d 0f 00 00 	lea    0xf2d(%rip),%rdi        # 402308 <_IO_stdin_used+0x308>
+  4013db:	e8 50 fc ff ff       	call   401030 <puts@plt>
+  4013e0:	48 8d 3d 61 0f 00 00 	lea    0xf61(%rip),%rdi        # 402348 <_IO_stdin_used+0x348>
+  4013e7:	e8 44 fc ff ff       	call   401030 <puts@plt>
+  4013ec:	48 8d 3d 85 0f 00 00 	lea    0xf85(%rip),%rdi        # 402378 <_IO_stdin_used+0x378>
+  4013f3:	e8 38 fc ff ff       	call   401030 <puts@plt>
+  4013f8:	b8 00 00 00 00       	mov    $0x0,%eax
+  4013fd:	e8 d0 fe ff ff       	call   4012d2 <westVillage>
+  401402:	90                   	nop
+  401403:	5d                   	pop    %rbp
+  401404:	c3                   	ret
+
+0000000000401405 <save>:
+  401405:	55                   	push   %rbp
+  401406:	48 89 e5             	mov    %rsp,%rbp
+  401409:	48 83 ec 20          	sub    $0x20,%rsp
+  40140d:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  401411:	48 89 c7             	mov    %rax,%rdi
+  401414:	b8 00 00 00 00       	mov    $0x0,%eax
+  401419:	e8 62 fc ff ff       	call   401080 <gets@plt>
+  40141e:	90                   	nop
+  40141f:	c9                   	leave
+  401420:	c3                   	ret
+
+0000000000401421 <eastCastle>:
+  401421:	55                   	push   %rbp
+  401422:	48 89 e5             	mov    %rsp,%rbp
+  401425:	48 8d 3d 94 0f 00 00 	lea    0xf94(%rip),%rdi        # 4023c0 <_IO_stdin_used+0x3c0>
+  40142c:	e8 ff fb ff ff       	call   401030 <puts@plt>
+  401431:	48 8d 3d b8 0f 00 00 	lea    0xfb8(%rip),%rdi        # 4023f0 <_IO_stdin_used+0x3f0>
+  401438:	e8 f3 fb ff ff       	call   401030 <puts@plt>
+  40143d:	48 8d 3d f4 0f 00 00 	lea    0xff4(%rip),%rdi        # 402438 <_IO_stdin_used+0x438>
+  401444:	e8 e7 fb ff ff       	call   401030 <puts@plt>
+  401449:	b8 00 00 00 00       	mov    $0x0,%eax
+  40144e:	e8 cd fd ff ff       	call   401220 <game>
+  401453:	90                   	nop
+  401454:	5d                   	pop    %rbp
+  401455:	c3                   	ret
+
+0000000000401456 <enterCastle>:
+  401456:	55                   	push   %rbp
+  401457:	48 89 e5             	mov    %rsp,%rbp
+  40145a:	ba 10 27 00 00       	mov    $0x2710,%edx
+  40145f:	be 28 00 00 00       	mov    $0x28,%esi
+  401464:	48 8d 3d 02 10 00 00 	lea    0x1002(%rip),%rdi        # 40246d <_IO_stdin_used+0x46d>
+  40146b:	b8 00 00 00 00       	mov    $0x0,%eax
+  401470:	e8 66 00 00 00       	call   4014db <fight>
+  401475:	90                   	nop
+  401476:	5d                   	pop    %rbp
+  401477:	c3                   	ret
+
+0000000000401478 <northForest>:
+  401478:	55                   	push   %rbp
+  401479:	48 89 e5             	mov    %rsp,%rbp
+  40147c:	48 8d 3d f5 0f 00 00 	lea    0xff5(%rip),%rdi        # 402478 <_IO_stdin_used+0x478>
+  401483:	e8 a8 fb ff ff       	call   401030 <puts@plt>
+  401488:	ba 78 00 00 00       	mov    $0x78,%edx
+  40148d:	be 0c 00 00 00       	mov    $0xc,%esi
+  401492:	48 8d 3d 28 10 00 00 	lea    0x1028(%rip),%rdi        # 4024c1 <_IO_stdin_used+0x4c1>
+  401499:	b8 00 00 00 00       	mov    $0x0,%eax
+  40149e:	e8 38 00 00 00       	call   4014db <fight>
+  4014a3:	90                   	nop
+  4014a4:	5d                   	pop    %rbp
+  4014a5:	c3                   	ret
+
+00000000004014a6 <southDesert>:
+  4014a6:	55                   	push   %rbp
+  4014a7:	48 89 e5             	mov    %rsp,%rbp
+  4014aa:	48 8d 3d 15 10 00 00 	lea    0x1015(%rip),%rdi        # 4024c6 <_IO_stdin_used+0x4c6>
+  4014b1:	e8 7a fb ff ff       	call   401030 <puts@plt>
+  4014b6:	48 8d 3d 2b 10 00 00 	lea    0x102b(%rip),%rdi        # 4024e8 <_IO_stdin_used+0x4e8>
+  4014bd:	e8 6e fb ff ff       	call   401030 <puts@plt>
+  4014c2:	48 8d 3d 4f 10 00 00 	lea    0x104f(%rip),%rdi        # 402518 <_IO_stdin_used+0x518>
+  4014c9:	e8 62 fb ff ff       	call   401030 <puts@plt>
+  4014ce:	b8 00 00 00 00       	mov    $0x0,%eax
+  4014d3:	e8 48 fd ff ff       	call   401220 <game>
+  4014d8:	90                   	nop
+  4014d9:	5d                   	pop    %rbp
+  4014da:	c3                   	ret
+
+00000000004014db <fight>:
+  4014db:	55                   	push   %rbp
+  4014dc:	48 89 e5             	mov    %rsp,%rbp
+  4014df:	41 57                	push   %r15
+  4014e1:	41 56                	push   %r14
+  4014e3:	41 55                	push   %r13
+  4014e5:	41 54                	push   %r12
+  4014e7:	53                   	push   %rbx
+  4014e8:	48 83 ec 48          	sub    $0x48,%rsp
+  4014ec:	48 89 7d 98          	mov    %rdi,-0x68(%rbp)
+  4014f0:	89 75 94             	mov    %esi,-0x6c(%rbp)
+  4014f3:	89 55 90             	mov    %edx,-0x70(%rbp)
+  4014f6:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  4014fa:	48 89 c6             	mov    %rax,%rsi
+  4014fd:	48 8d 3d 38 10 00 00 	lea    0x1038(%rip),%rdi        # 40253c <_IO_stdin_used+0x53c>
+  401504:	b8 00 00 00 00       	mov    $0x0,%eax
+  401509:	e8 42 fb ff ff       	call   401050 <printf@plt>
+  40150e:	c7 45 cc 32 00 00 00 	movl   $0x32,-0x34(%rbp)
+  401515:	c7 45 c8 1e 00 00 00 	movl   $0x1e,-0x38(%rbp)
+  40151c:	8b 55 90             	mov    -0x70(%rbp),%edx
+  40151f:	8b 45 cc             	mov    -0x34(%rbp),%eax
+  401522:	89 c6                	mov    %eax,%esi
+  401524:	48 8d 3d 25 10 00 00 	lea    0x1025(%rip),%rdi        # 402550 <_IO_stdin_used+0x550>
+  40152b:	b8 00 00 00 00       	mov    $0x0,%eax
+  401530:	e8 1b fb ff ff       	call   401050 <printf@plt>
+  401535:	8b 45 94             	mov    -0x6c(%rbp),%eax
+  401538:	89 c6                	mov    %eax,%esi
+  40153a:	48 8d 3d 2f 10 00 00 	lea    0x102f(%rip),%rdi        # 402570 <_IO_stdin_used+0x570>
+  401541:	b8 00 00 00 00       	mov    $0x0,%eax
+  401546:	e8 05 fb ff ff       	call   401050 <printf@plt>
+  40154b:	e9 a8 00 00 00       	jmp    4015f8 <fight+0x11d>
+  401550:	48 8d 3d 3d 10 00 00 	lea    0x103d(%rip),%rdi        # 402594 <_IO_stdin_used+0x594>
+  401557:	b8 00 00 00 00       	mov    $0x0,%eax
+  40155c:	e8 ef fa ff ff       	call   401050 <printf@plt>
+  401561:	48 8d 45 a7          	lea    -0x59(%rbp),%rax
+  401565:	48 89 c6             	mov    %rax,%rsi
+  401568:	48 8d 3d aa 0b 00 00 	lea    0xbaa(%rip),%rdi        # 402119 <_IO_stdin_used+0x119>
+  40156f:	b8 00 00 00 00       	mov    $0x0,%eax
+  401574:	e8 27 fb ff ff       	call   4010a0 <__isoc99_scanf@plt>
+  401579:	0f b6 45 a7          	movzbl -0x59(%rbp),%eax
+  40157d:	3c 66                	cmp    $0x66,%al
+  40157f:	75 08                	jne    401589 <fight+0xae>
+  401581:	8b 45 c8             	mov    -0x38(%rbp),%eax
+  401584:	29 45 90             	sub    %eax,-0x70(%rbp)
+  401587:	eb 19                	jmp    4015a2 <fight+0xc7>
+  401589:	0f b6 45 a7          	movzbl -0x59(%rbp),%eax
+  40158d:	3c 72                	cmp    $0x72,%al
+  40158f:	75 11                	jne    4015a2 <fight+0xc7>
+  401591:	48 8d 3d 0e 10 00 00 	lea    0x100e(%rip),%rdi        # 4025a6 <_IO_stdin_used+0x5a6>
+  401598:	b8 00 00 00 00       	mov    $0x0,%eax
+  40159d:	e8 ae fa ff ff       	call   401050 <printf@plt>
+  4015a2:	83 7d 90 00          	cmpl   $0x0,-0x70(%rbp)
+  4015a6:	7e 62                	jle    40160a <fight+0x12f>
+  4015a8:	8b 55 94             	mov    -0x6c(%rbp),%edx
+  4015ab:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  4015af:	48 89 c6             	mov    %rax,%rsi
+  4015b2:	48 8d 3d ff 0f 00 00 	lea    0xfff(%rip),%rdi        # 4025b8 <_IO_stdin_used+0x5b8>
+  4015b9:	b8 00 00 00 00       	mov    $0x0,%eax
+  4015be:	e8 8d fa ff ff       	call   401050 <printf@plt>
+  4015c3:	8b 45 94             	mov    -0x6c(%rbp),%eax
+  4015c6:	29 45 cc             	sub    %eax,-0x34(%rbp)
+  4015c9:	8b 55 90             	mov    -0x70(%rbp),%edx
+  4015cc:	8b 45 cc             	mov    -0x34(%rbp),%eax
+  4015cf:	89 c6                	mov    %eax,%esi
+  4015d1:	48 8d 3d 78 0f 00 00 	lea    0xf78(%rip),%rdi        # 402550 <_IO_stdin_used+0x550>
+  4015d8:	b8 00 00 00 00       	mov    $0x0,%eax
+  4015dd:	e8 6e fa ff ff       	call   401050 <printf@plt>
+  4015e2:	8b 45 94             	mov    -0x6c(%rbp),%eax
+  4015e5:	89 c6                	mov    %eax,%esi
+  4015e7:	48 8d 3d ea 0f 00 00 	lea    0xfea(%rip),%rdi        # 4025d8 <_IO_stdin_used+0x5d8>
+  4015ee:	b8 00 00 00 00       	mov    $0x0,%eax
+  4015f3:	e8 58 fa ff ff       	call   401050 <printf@plt>
+  4015f8:	83 7d cc 00          	cmpl   $0x0,-0x34(%rbp)
+  4015fc:	7e 0d                	jle    40160b <fight+0x130>
+  4015fe:	83 7d 90 00          	cmpl   $0x0,-0x70(%rbp)
+  401602:	0f 8f 48 ff ff ff    	jg     401550 <fight+0x75>
+  401608:	eb 01                	jmp    40160b <fight+0x130>
+  40160a:	90                   	nop
+  40160b:	83 7d cc 00          	cmpl   $0x0,-0x34(%rbp)
+  40160f:	7f 0a                	jg     40161b <fight+0x140>
+  401611:	bf 01 00 00 00       	mov    $0x1,%edi
+  401616:	e8 95 fa ff ff       	call   4010b0 <exit@plt>
+  40161b:	83 7d 90 00          	cmpl   $0x0,-0x70(%rbp)
+  40161f:	0f 8f fb 00 00 00    	jg     401720 <fight+0x245>
+  401625:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  401629:	48 8d 35 cb 0f 00 00 	lea    0xfcb(%rip),%rsi        # 4025fb <_IO_stdin_used+0x5fb>
+  401630:	48 89 c7             	mov    %rax,%rdi
+  401633:	e8 38 fa ff ff       	call   401070 <strcmp@plt>
+  401638:	85 c0                	test   %eax,%eax
+  40163a:	0f 85 c8 00 00 00    	jne    401708 <fight+0x22d>
+  401640:	48 89 e0             	mov    %rsp,%rax
+  401643:	48 89 c3             	mov    %rax,%rbx
+  401646:	c7 45 c4 31 00 00 00 	movl   $0x31,-0x3c(%rbp)
+  40164d:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+  401650:	48 63 d0             	movslq %eax,%rdx
+  401653:	48 83 ea 01          	sub    $0x1,%rdx
+  401657:	48 89 55 b8          	mov    %rdx,-0x48(%rbp)
+  40165b:	48 63 d0             	movslq %eax,%rdx
+  40165e:	49 89 d6             	mov    %rdx,%r14
+  401661:	41 bf 00 00 00 00    	mov    $0x0,%r15d
+  401667:	48 63 d0             	movslq %eax,%rdx
+  40166a:	49 89 d4             	mov    %rdx,%r12
+  40166d:	41 bd 00 00 00 00    	mov    $0x0,%r13d
+  401673:	48 98                	cltq
+  401675:	ba 10 00 00 00       	mov    $0x10,%edx
+  40167a:	48 83 ea 01          	sub    $0x1,%rdx
+  40167e:	48 01 d0             	add    %rdx,%rax
+  401681:	b9 10 00 00 00       	mov    $0x10,%ecx
+  401686:	ba 00 00 00 00       	mov    $0x0,%edx
+  40168b:	48 f7 f1             	div    %rcx
+  40168e:	48 6b c0 10          	imul   $0x10,%rax,%rax
+  401692:	48 29 c4             	sub    %rax,%rsp
+  401695:	48 89 e0             	mov    %rsp,%rax
+  401698:	48 83 c0 00          	add    $0x0,%rax
+  40169c:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+  4016a0:	48 8d 35 5e 0f 00 00 	lea    0xf5e(%rip),%rsi        # 402605 <_IO_stdin_used+0x605>
+  4016a7:	48 8d 3d 59 0f 00 00 	lea    0xf59(%rip),%rdi        # 402607 <_IO_stdin_used+0x607>
+  4016ae:	e8 dd f9 ff ff       	call   401090 <fopen@plt>
+  4016b3:	48 89 45 a8          	mov    %rax,-0x58(%rbp)
+  4016b7:	48 83 7d a8 00       	cmpq   $0x0,-0x58(%rbp)
+  4016bc:	75 13                	jne    4016d1 <fight+0x1f6>
+  4016be:	48 8d 3d 53 0f 00 00 	lea    0xf53(%rip),%rdi        # 402618 <_IO_stdin_used+0x618>
+  4016c5:	b8 00 00 00 00       	mov    $0x0,%eax
+  4016ca:	e8 81 f9 ff ff       	call   401050 <printf@plt>
+  4016cf:	eb 32                	jmp    401703 <fight+0x228>
+  4016d1:	48 8b 55 a8          	mov    -0x58(%rbp),%rdx
+  4016d5:	8b 4d c4             	mov    -0x3c(%rbp),%ecx
+  4016d8:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  4016dc:	89 ce                	mov    %ecx,%esi
+  4016de:	48 89 c7             	mov    %rax,%rdi
+  4016e1:	e8 7a f9 ff ff       	call   401060 <fgets@plt>
+  4016e6:	48 85 c0             	test   %rax,%rax
+  4016e9:	74 18                	je     401703 <fight+0x228>
+  4016eb:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  4016ef:	48 89 c6             	mov    %rax,%rsi
+  4016f2:	48 8d 3d 7f 0f 00 00 	lea    0xf7f(%rip),%rdi        # 402678 <_IO_stdin_used+0x678>
+  4016f9:	b8 00 00 00 00       	mov    $0x0,%eax
+  4016fe:	e8 4d f9 ff ff       	call   401050 <printf@plt>
+  401703:	48 89 dc             	mov    %rbx,%rsp
+  401706:	eb 31                	jmp    401739 <fight+0x25e>
+  401708:	48 8d 3d d9 0f 00 00 	lea    0xfd9(%rip),%rdi        # 4026e8 <_IO_stdin_used+0x6e8>
+  40170f:	e8 1c f9 ff ff       	call   401030 <puts@plt>
+  401714:	b8 00 00 00 00       	mov    $0x0,%eax
+  401719:	e8 02 fb ff ff       	call   401220 <game>
+  40171e:	eb 19                	jmp    401739 <fight+0x25e>
+  401720:	8b 55 90             	mov    -0x70(%rbp),%edx
+  401723:	8b 45 cc             	mov    -0x34(%rbp),%eax
+  401726:	89 c6                	mov    %eax,%esi
+  401728:	48 8d 3d 31 10 00 00 	lea    0x1031(%rip),%rdi        # 402760 <_IO_stdin_used+0x760>
+  40172f:	b8 00 00 00 00       	mov    $0x0,%eax
+  401734:	e8 17 f9 ff ff       	call   401050 <printf@plt>
+  401739:	90                   	nop
+  40173a:	48 8d 65 d8          	lea    -0x28(%rbp),%rsp
+  40173e:	5b                   	pop    %rbx
+  40173f:	41 5c                	pop    %r12
+  401741:	41 5d                	pop    %r13
+  401743:	41 5e                	pop    %r14
+  401745:	41 5f                	pop    %r15
+  401747:	5d                   	pop    %rbp
+  401748:	c3                   	ret
+  401749:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000401750 <__libc_csu_init>:
+  401750:	41 57                	push   %r15
+  401752:	4c 8d 3d b7 26 00 00 	lea    0x26b7(%rip),%r15        # 403e10 <__frame_dummy_init_array_entry>
+  401759:	41 56                	push   %r14
+  40175b:	49 89 d6             	mov    %rdx,%r14
+  40175e:	41 55                	push   %r13
+  401760:	49 89 f5             	mov    %rsi,%r13
+  401763:	41 54                	push   %r12
+  401765:	41 89 fc             	mov    %edi,%r12d
+  401768:	55                   	push   %rbp
+  401769:	48 8d 2d a8 26 00 00 	lea    0x26a8(%rip),%rbp        # 403e18 <__do_global_dtors_aux_fini_array_entry>
+  401770:	53                   	push   %rbx
+  401771:	4c 29 fd             	sub    %r15,%rbp
+  401774:	48 83 ec 08          	sub    $0x8,%rsp
+  401778:	e8 83 f8 ff ff       	call   401000 <_init>
+  40177d:	48 c1 fd 03          	sar    $0x3,%rbp
+  401781:	74 1b                	je     40179e <__libc_csu_init+0x4e>
+  401783:	31 db                	xor    %ebx,%ebx
+  401785:	0f 1f 00             	nopl   (%rax)
+  401788:	4c 89 f2             	mov    %r14,%rdx
+  40178b:	4c 89 ee             	mov    %r13,%rsi
+  40178e:	44 89 e7             	mov    %r12d,%edi
+  401791:	41 ff 14 df          	call   *(%r15,%rbx,8)
+  401795:	48 83 c3 01          	add    $0x1,%rbx
+  401799:	48 39 dd             	cmp    %rbx,%rbp
+  40179c:	75 ea                	jne    401788 <__libc_csu_init+0x38>
+  40179e:	48 83 c4 08          	add    $0x8,%rsp
+  4017a2:	5b                   	pop    %rbx
+  4017a3:	5d                   	pop    %rbp
+  4017a4:	41 5c                	pop    %r12
+  4017a6:	41 5d                	pop    %r13
+  4017a8:	41 5e                	pop    %r14
+  4017aa:	41 5f                	pop    %r15
+  4017ac:	c3                   	ret
+  4017ad:	0f 1f 00             	nopl   (%rax)
+
+00000000004017b0 <__libc_csu_fini>:
+  4017b0:	c3                   	ret
+
+Disassembly of section .fini:
+
+00000000004017b4 <_fini>:
+  4017b4:	48 83 ec 08          	sub    $0x8,%rsp
+  4017b8:	48 83 c4 08          	add    $0x8,%rsp
+  4017bc:	c3                   	ret

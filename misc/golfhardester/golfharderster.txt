@@ -1,0 +1,7 @@
+misc/golf-hardester
+aedan
+1 solve / 499 points
+
+you guys were definitely missing regex golfing this year... right?
+
+nc tjc.tf 31132
